@@ -75,3 +75,12 @@ body {
 .submit-btn {
     cursor:pointer;
 }
+
+#search-results {
+    display: none;
+    flex-direction: column;
+}
+
+#error-message {
+    display: none;
+}
