@@ -96,6 +96,9 @@ body {
     transform: translateX(-9rem);
     border-bottom: 2px solid grey;
     padding: 0.5rem 0;
+    position: sticky;
+    top: 0;
+    background-color: white;
 }
 
 #grouped-links-results {
@@ -139,4 +142,8 @@ body {
     padding: 0 1.2rem;
     border: none;
     border-radius: 5px;
+}
+
+#sign-in-button:hover {
+    cursor: pointer;
 }
