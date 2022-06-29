@@ -81,6 +81,7 @@ body {
     flex-direction: column;
     width: 100vw;
     padding-left: 20rem;
+    padding-bottom: 3rem;
 }
 
 #error-message {
