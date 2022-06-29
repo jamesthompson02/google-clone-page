@@ -4,6 +4,7 @@ const searchBar = document.getElementById('searchbar');
 const errorSearchMessage = document.getElementById('error-message');
 const searchResultsContainer = document.getElementById('search-results');
 const homepage = document.getElementById('homepage');
+const searchBarForResults = document.getElementById('searchbar-for-results');
 
 function displaySearchResults() {
     homepage.style.display = 'none';
@@ -41,6 +42,7 @@ function getTenResults() {
             newDiv.appendChild(anchor);
             newDiv.appendChild(para);
             searchResultsContainer.appendChild(newDiv);
+            searchBarForResults.value = "football";
 
         })).then(
             displaySearchResults()
@@ -74,6 +76,7 @@ function getTenResults() {
             newDiv.appendChild(anchor);
             newDiv.appendChild(para);
             searchResultsContainer.appendChild(newDiv);
+            searchBarForResults.value = "food";
 
         })).then(
             displaySearchResults()
@@ -108,6 +111,7 @@ function getTenResults() {
             newDiv.appendChild(anchor);
             newDiv.appendChild(para);
             searchResultsContainer.appendChild(newDiv);
+            searchBarForResults.value = "clothes";
 
         })).then(
             displaySearchResults()
