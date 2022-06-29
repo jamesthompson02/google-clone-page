@@ -10,8 +10,8 @@ router.get('/all', (req,res) => {
 
 router.get('/:category',(req,res) => {
     const category = req.params.category;
-    let searchResults;
-    if(searchResults === Result.findByCategory(category)){
+    const searchResults =  Result.findByCategory(category);
+    if(searchResults.length > 0){
         res.send(searchResults);
     } else {
         const err = "Sorry, no results matching this category are available. Please search for football or food."
