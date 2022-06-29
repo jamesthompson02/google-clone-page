@@ -25,7 +25,8 @@ Navigate to the index.html file and open with live server (preferably) or just o
 [x] Successfully built a backend which can return json data according to category when using the url: 'localhost:3000/search/:category'. 
 [x] Successfully linked this backend functionality to the front end by correctly drafting a fetch method.
 [x] When the user clicks search or presses 'Enter' after having typed either 'football', 'clothes' or 'food' the appropriate links and descriptions are successfully rendered in the browswer. 
-
+[x] When the user clicks the button "I'm feeling lucky", the button successfully redirects the user to one of the websites. 
+[x] Added a little navbar to the search results to make our clone look more like the real Google.
 **Wins** 
 All the aforementioned points in the changelog section
 
