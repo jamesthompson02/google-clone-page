@@ -91,3 +91,46 @@ searchBar.addEventListener('keydown', (e) => {
     }
     
 })
+
+
+function luckyLink() {
+    let randomNum = Math.floor(Math.random() * 8);
+    if (searchBar.value === 'football') {
+        fetch('http://localhost:3000/search/football')
+        .then(response => response.json())
+        .then(data => {
+            let websiteLink = data[randomNum];
+            let newAnchor = document.createElement('a')
+            newAnchor.href = websiteLink.link;
+            luckyButton.appendChild(newAnchor);
+            newAnchor.click();
+        }) 
+    } else if (searchBar.value === 'food') {
+        fetch('http://localhost:3000/search/food')
+        .then(response => response.json())
+        .then(data => {
+            let websiteLink = data[randomNum];
+            let newAnchor = document.createElement('a')
+            newAnchor.href = websiteLink.link;
+            luckyButton.appendChild(newAnchor);
+            newAnchor.click();
+        }) 
+    } else if (searchBar.value === 'clothes') {
+        fetch('http://localhost:3000/search/clothes')
+        .then(response => response.json())
+        .then(data => {
+            let websiteLink = data[randomNum];
+            let newAnchor = document.createElement('a')
+            newAnchor.href = websiteLink.link;
+            luckyButton.appendChild(newAnchor);
+            newAnchor.click();
+        }) 
+    } else {
+        errorSearchMessage.style.display = 'block';
+
+    }
+}
+
+luckyButton.addEventListener('click', () => {
+    luckyLink();
+})
