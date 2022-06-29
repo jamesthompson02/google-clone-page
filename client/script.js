@@ -20,9 +20,9 @@ function getTenResults() {
         .then(data => data.forEach(each => {
             let anchor = document.createElement('a');
             let para = document.createElement('p');
-            // let linkText = document.createTextNode(each.title);
-            // anchor.appendChild(linkText);
-            anchor.title = each.title;
+            let linkText = document.createTextNode(each.title);
+            anchor.appendChild(linkText);
+            anchor.textContent = each.title;
             anchor.href = each.link;
             para.innerText = each.description
             searchResultsContainer.appendChild(anchor);
@@ -35,9 +35,43 @@ function getTenResults() {
 
     } else if (searchBar.value === 'food') {
         fetch('http://localhost:3000/search/food')
+        .then(response => response.json())
+        .then(data => data.forEach(each => {
+            let anchor = document.createElement('a');
+            let para = document.createElement('p');
+            let linkText = document.createTextNode(each.title);
+            anchor.appendChild(linkText);
+            anchor.textContent = each.title;
+            anchor.href = each.link;
+            para.innerText = each.description
+            searchResultsContainer.appendChild(anchor);
+            searchResultsContainer.appendChild(para);
+
+        })).then(
+            displaySearchResults()
+            
+        );
+
         
     } else if (searchBar.value === 'clothes') {
         fetch('http://localhost:3000/search/clothes')
+        .then(response => response.json())
+        .then(data => data.forEach(each => {
+            let anchor = document.createElement('a');
+            let para = document.createElement('p');
+            let linkText = document.createTextNode(each.title);
+            anchor.appendChild(linkText);
+            anchor.textContent = each.title;
+            anchor.href = each.link;
+            para.innerText = each.description
+            searchResultsContainer.appendChild(anchor);
+            searchResultsContainer.appendChild(para);
+
+        })).then(
+            displaySearchResults()
+            
+        );
+
     } else {
         errorSearchMessage.style.display = 'block';
 
