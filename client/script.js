@@ -180,3 +180,120 @@ function luckyLink() {
 luckyButton.addEventListener('click', () => {
     luckyLink();
 })
+
+searchBarForResults.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+        if (searchBarForResults.value === "football"){
+            let searchResultsLength = [...searchResultsContainer.querySelectorAll(':scope > div')];
+            searchResultsLength.forEach((each, index) => {
+                if ( 0 < index) {
+                    searchResultsContainer.removeChild(searchResultsLength[index]);
+                }
+            });
+            fetch('http://localhost:3000/search/football')
+            .then(response => response.json())
+            .then(data => data.forEach(each => {
+                let newDiv = document.createElement('div')
+                let anchor = document.createElement('a');
+                let para = document.createElement('p');
+                let para2 = document.createElement('p');
+                let linkText = document.createTextNode(each.title);
+                anchor.appendChild(linkText);
+                anchor.textContent = each.title;
+                anchor.href = each.link;
+                para.innerText = each.description;
+                para2.innerText = each.link;
+                para2.style.margin = '0';
+                para2.style.fontFamily = "Roboto";
+                anchor.style.margin = '0';
+                anchor.style.fontSize = '1.4rem';
+                anchor.style.fontFamily = "Roboto";
+                para.style.margin = '0';
+                para.style.width = '550px';
+                para.style.fontFamily = "Roboto";
+                newDiv.style.margin = '1rem';
+                newDiv.appendChild(para2);
+                newDiv.appendChild(anchor);
+                newDiv.appendChild(para);
+                searchResultsContainer.appendChild(newDiv);
+            }))
+            
+       
+        }
+        if (searchBarForResults.value === "food"){
+            let searchResultsLength = [...searchResultsContainer.querySelectorAll(':scope > div')];
+            searchResultsLength.forEach((each, index) => {
+                if ( 0 < index) {
+                    searchResultsContainer.removeChild(searchResultsLength[index]);
+                }
+            });
+            fetch('http://localhost:3000/search/food')
+            .then(response => response.json())
+            .then(data => data.forEach(each => {
+                let newDiv = document.createElement('div')
+                let anchor = document.createElement('a');
+                let para = document.createElement('p');
+                let para2 = document.createElement('p');
+                let linkText = document.createTextNode(each.title);
+                anchor.appendChild(linkText);
+                anchor.textContent = each.title;
+                anchor.href = each.link;
+                para.innerText = each.description;
+                para2.innerText = each.link;
+                para2.style.margin = '0';
+                para2.style.fontFamily = "Roboto";
+                anchor.style.margin = '0';
+                anchor.style.fontSize = '1.4rem';
+                anchor.style.fontFamily = "Roboto";
+                para.style.margin = '0';
+                para.style.width = '550px';
+                para.style.fontFamily = "Roboto";
+                newDiv.style.margin = '1rem';
+                newDiv.appendChild(para2);
+                newDiv.appendChild(anchor);
+                newDiv.appendChild(para);
+                searchResultsContainer.appendChild(newDiv);
+            }))
+            
+       
+        }
+        if (searchBarForResults.value === "clothes"){
+            let searchResultsLength = [...searchResultsContainer.querySelectorAll(':scope > div')];
+            searchResultsLength.forEach((each, index) => {
+                if ( 0 < index) {
+                    searchResultsContainer.removeChild(searchResultsLength[index]);
+                }
+            });
+            fetch('http://localhost:3000/search/clothes')
+            .then(response => response.json())
+            .then(data => data.forEach(each => {
+                let newDiv = document.createElement('div')
+                let anchor = document.createElement('a');
+                let para = document.createElement('p');
+                let para2 = document.createElement('p');
+                let linkText = document.createTextNode(each.title);
+                anchor.appendChild(linkText);
+                anchor.textContent = each.title;
+                anchor.href = each.link;
+                para.innerText = each.description;
+                para2.innerText = each.link;
+                para2.style.margin = '0';
+                para2.style.fontFamily = "Roboto";
+                anchor.style.margin = '0';
+                anchor.style.fontSize = '1.4rem';
+                anchor.style.fontFamily = "Roboto";
+                para.style.margin = '0';
+                para.style.width = '550px';
+                para.style.fontFamily = "Roboto";
+                newDiv.style.margin = '1rem';
+                newDiv.appendChild(para2);
+                newDiv.appendChild(anchor);
+                newDiv.appendChild(para);
+                searchResultsContainer.appendChild(newDiv);
+            }))
+            
+       
+        }
+    }
+
+})
