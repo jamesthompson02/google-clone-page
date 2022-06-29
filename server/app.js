@@ -10,4 +10,8 @@ app.use(cors());
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
+const resultRoutes = require('./controllers/results');
+
+app.use('/search', resultRoutes);
+
 module.exports = app;
