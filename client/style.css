@@ -79,6 +79,8 @@ body {
 #search-results {
     display: none;
     flex-direction: column;
+    width: 100vw;
+    padding-left: 20rem;
 }
 
 #error-message {
