@@ -112,6 +112,9 @@ body {
     height: 50px;
     width: auto;
 }
+#results-logo:hover {
+    cursor: pointer;
+}
 
 #searchbar-for-results {
     width: 400px;

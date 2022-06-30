@@ -5,6 +5,7 @@ const errorSearchMessage = document.getElementById('error-message');
 const searchResultsContainer = document.getElementById('search-results');
 const homepage = document.getElementById('homepage');
 const searchBarForResults = document.getElementById('searchbar-for-results');
+const resultsLogo = document.getElementById('results-logo');
 
 function displaySearchResults() {
     homepage.style.display = 'none';
@@ -295,5 +296,21 @@ searchBarForResults.addEventListener('keydown', (e) => {
        
         }
     }
+
+})
+
+
+resultsLogo.addEventListener('click', () => {
+    searchBar.value = "";
+    errorSearchMessage.style.display = 'none';
+    searchResultsContainer.style.display = 'none';
+    homepage.style.display = 'flex';
+    let searchResultsLength = [...searchResultsContainer.querySelectorAll(':scope > div')];
+            searchResultsLength.forEach((each, index) => {
+                if ( 0 < index) {
+                    searchResultsContainer.removeChild(searchResultsLength[index]);
+                }
+            });
+
 
 })
