@@ -16,7 +16,10 @@ function displaySearchResults() {
 
 function getTenResults() {
     errorSearchMessage.style.display = 'none';
-    if (searchBar.value === 'football') {
+    let treatedSearchBarValue = searchBar.value;
+    treatedSearchBarValue = treatedSearchBarValue.toLowerCase();
+    treatedSearchBarValue = treatedSearchBarValue.replace(/\s/g, ''); 
+    if (treatedSearchBarValue === 'football') {
         fetch('http://localhost:3000/search/football')
         .then(response => response.json())
         .then(data => data.forEach(each => {
@@ -50,7 +53,7 @@ function getTenResults() {
             
         );
 
-    } else if (searchBar.value === 'food') {
+    } else if (treatedSearchBarValue  === 'food') {
         fetch('http://localhost:3000/search/food')
         .then(response => response.json())
         .then(data => data.forEach(each => {
@@ -85,7 +88,7 @@ function getTenResults() {
         );
 
         
-    } else if (searchBar.value === 'clothes') {
+    } else if (treatedSearchBarValue  === 'clothes') {
         fetch('http://localhost:3000/search/clothes')
         .then(response => response.json())
         .then(data => data.forEach(each => {
@@ -142,7 +145,10 @@ searchBar.addEventListener('keydown', (e) => {
 
 function luckyLink() {
     let randomNum = Math.floor(Math.random() * 8);
-    if (searchBar.value === 'football') {
+    let treatedSearchBarValue = searchBar.value;
+    treatedSearchBarValue = treatedSearchBarValue.toLowerCase();
+    treatedSearchBarValue = treatedSearchBarValue.replace(/\s/g, ''); 
+    if (treatedSearchBarValue === 'football') {
         fetch('http://localhost:3000/search/football')
         .then(response => response.json())
         .then(data => {
@@ -152,7 +158,7 @@ function luckyLink() {
             luckyButton.appendChild(newAnchor);
             newAnchor.click();
         }) 
-    } else if (searchBar.value === 'food') {
+    } else if (treatedSearchBarValue === 'food') {
         fetch('http://localhost:3000/search/food')
         .then(response => response.json())
         .then(data => {
@@ -162,7 +168,7 @@ function luckyLink() {
             luckyButton.appendChild(newAnchor);
             newAnchor.click();
         }) 
-    } else if (searchBar.value === 'clothes') {
+    } else if (treatedSearchBarValue === 'clothes') {
         fetch('http://localhost:3000/search/clothes')
         .then(response => response.json())
         .then(data => {
@@ -184,7 +190,10 @@ luckyButton.addEventListener('click', () => {
 
 searchBarForResults.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-        if (searchBarForResults.value === "football"){
+        let treatedSearchBarValue = searchBarForResults.value;
+        treatedSearchBarValue = treatedSearchBarValue.toLowerCase();
+        treatedSearchBarValue = treatedSearchBarValue.replace(/\s/g, ''); 
+        if (treatedSearchBarValue === "football"){
             let searchResultsLength = [...searchResultsContainer.querySelectorAll(':scope > div')];
             searchResultsLength.forEach((each, index) => {
                 if ( 0 < index) {
@@ -221,7 +230,7 @@ searchBarForResults.addEventListener('keydown', (e) => {
             
        
         }
-        if (searchBarForResults.value === "food"){
+        if (treatedSearchBarValue === "food"){
             let searchResultsLength = [...searchResultsContainer.querySelectorAll(':scope > div')];
             searchResultsLength.forEach((each, index) => {
                 if ( 0 < index) {
@@ -258,7 +267,7 @@ searchBarForResults.addEventListener('keydown', (e) => {
             
        
         }
-        if (searchBarForResults.value === "clothes"){
+        if (treatedSearchBarValue === "clothes"){
             let searchResultsLength = [...searchResultsContainer.querySelectorAll(':scope > div')];
             searchResultsLength.forEach((each, index) => {
                 if ( 0 < index) {
