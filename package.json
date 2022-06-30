@@ -1,0 +1,31 @@
+{
+  "name": "google-clone-page",
+  "version": "1.0.0",
+  "description": "google clone page attempt",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./server/index.js",
+    "test": "jest --silent --watchAll",
+    "coverage": "jest --coverage --silent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jamesthompson02/google-clone-page.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jamesthompson02/google-clone-page/issues"
+  },
+  "homepage": "https://github.com/jamesthompson02/google-clone-page#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "jest": "^28.1.1",
+    "nodemon": "^2.0.18",
+    "supertest": "^6.2.3"
+  }
+}
